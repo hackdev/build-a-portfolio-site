@@ -1,0 +1,341 @@
+
+/*------Global styles------*/
+/*icon font for the logo*/
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/*setting box sizing to include padding and border*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*overriding user agent styles*/
+* {
+	margin: 0;
+    padding: 0;
+}
+
+/*fonts*/
+h1 {
+	text-transform: uppercase;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 300;
+	font-size: 1.5em; /* 24px/16 fallback option*/
+	font-size: 6.5vw;
+  	color: #464786;
+}
+
+@media only screen and (min-width: 500px){
+	.name h1 {
+  		font-size: 1.5em;
+	}
+}
+
+h2 {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+  	font-size: 1.125em; /* 18px/16 fallaback option*/
+  	font-size: 3.5vw;
+  	color: #333;
+}
+
+@media only screen and (min-width: 500px){
+	.name h2 {
+  		font-size: 1.3em;
+	}
+}
+
+h3 {
+	font-family: "Roboto", sans-serif;
+	font-weight: 100;
+  	font-size: 1.5em; /* 24px/16 fallback option*/
+  	font-size: 5.5vw;
+  	color: #666;
+}
+
+@media only screen and (min-width: 500px){
+	.title h3 {
+  		font-size: 1.5em;
+	}
+}
+
+/*flexbox containers*/
+.container, .projects {
+	width: 100%;
+
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+/*max size for large viewports*/
+@media only screen and (min-width: 1200px){
+	.container {
+		width: 1200px;
+		margin: 0 auto;
+	}
+}
+
+/*flex items*/
+.name, .logo, .hero, .title, .project {
+	width: 100%;
+	order: 2;
+}
+
+/*making images responsive up to actual size*/
+img {
+    max-width: 100%;
+}
+
+/*projects list styling*/
+ul {
+    list-style-type: none;
+}
+
+
+/*------Header elements------*/
+/*center name*/
+.name {
+	text-align: center;
+	line-height: 1.5;
+	padding: 2em 3% 1em;
+}
+
+/*format logo*/
+.entypo-keyboard {
+	font-family: "entypo", sans-serif;
+	text-align: center;
+	font-size: 18vw;
+	line-height: 0.8;
+	color: #464786;
+}
+
+/*logo and name repositioning for viewports larger than 500px*/
+@media only screen and (min-width: 500px){
+ 	.entypo-keyboard {
+ 		font-size: 5em;
+ 		margin-left: 3%;
+ 		text-align: left;
+ 	}
+
+    .logo {
+    	padding: 2em 3% 1em;
+    	order: 1;
+    	width: 20%;
+    }
+
+	.name {
+		width: 80%;
+		text-align: right;
+		padding-left: 0;
+	}
+
+	.container {
+		align-items: center;
+	}
+
+	.hero {
+
+		border-top: 3px solid grey;
+		padding-top: 1em;
+	}
+
+	/*prevent ul and li from extending outside of container div in Firefox-- took me forever to figure this out--*/
+	.project img {
+    	width: 100%;
+	}
+}
+
+/*hero image and copy styling*/
+.hero {
+	position: relative;
+	padding-top: 1em;
+}
+
+.hero img {
+	margin: 1em auto 0;
+}
+
+.overlay {
+	position: absolute;
+	left: 0;
+	top: 2em;
+	height: 100%;
+	padding: 7% 3%;
+	text-align: center;
+}
+
+.hello {
+	display: block;
+    float: left;
+    width: 100%;
+
+	text-transform: uppercase;
+	text-shadow: 0 2px 0 rgba(154, 155, 195, 0.4);
+
+	font-family: "Roboto Condensed", sans-serif;
+	font-weight: 700;
+  	font-size: 1.5em; /* 24px/16 fallback*/
+  	font-size: 6.5vw;
+  	color: #13144c;
+  	line-height: 1.2;
+}
+
+/*max size for large viewports*/
+@media only screen and (min-width: 1200px){
+	.hello {
+		font-size: 5em;
+	}
+}
+
+.cohort {
+	display: block;
+	margin-top: 5%;
+    float: left;
+    width: 100%;
+
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+  	font-size: 1.125em; /* 18px/16 fallaback option*/
+  	font-size: 3.5vw;
+  	color: #2a2c6c;
+  	line-height: 3;
+}
+
+@media only screen and (min-width: 616px){
+	.cohort {
+		font-size: 1.3em;
+	}
+}
+
+/*------Portfolio elements------*/
+
+/*prevent ul and li from extending outside of container div in Firefox-- took me forever to figure this out--*/
+.project img {
+    width: 100%;
+    border: 1px solid #333;
+}
+
+/*pad title*/
+.title {
+	text-align: left;
+	line-height: 1.5;
+	padding: 2em 3% 1em;
+}
+
+/*title padding change for viewports larger than 950px*/
+@media only screen and (min-width: 950px){
+	.title {
+		padding: 2em 1em 1em;
+	}
+}
+
+/*pad project*/
+.project {
+	margin: 0 3% 3em;
+}
+
+/*project layout change for viewports larger than 616px*/
+@media only screen and (min-width: 616px) and (max-width: 949px){
+	.project img{
+		width: 50%;
+		max-width: 600px;
+	}
+}
+
+/*project layout change for viewports larger than 950px*/
+@media only screen and (min-width: 950px){
+	.project {
+		margin: 0 1em 3em;
+		width: calc(33.3333% - 2em);
+	}
+}
+
+/*project title formatting*/
+.project-name {
+	display: block;
+    float: left;
+    width: 100%;
+
+	text-transform: uppercase;
+	text-align: center;
+
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+  	font-size: 1.5em; /* 24px/16 fallback*/
+  	font-size: 6vw;
+  	color: #464786;
+  	line-height: 1.5;
+}
+
+@media only screen and (min-width: 500px){
+	.project-name {
+  		font-size: 1.5em;
+	}
+}
+
+/*project layout change for viewports larger than 616px*/
+@media only screen and (min-width: 616px) and (max-width: 949px){
+	.project-name{
+		float: right;
+		width: 50%;
+
+		text-align: left;
+		padding: 1em 0.5em 0.5em;
+	}
+}
+
+/*project url formatting*/
+.project-url {
+	display: block;
+    float: left;
+    width: 100%;
+
+	text-align: center;
+
+	font-family: "Roboto Condensed", sans-serif;
+	font-weight: 300;
+  	font-size: 1em; /* 16px/16 fallback*/
+  	font-size: 5vw;
+  	color: #666;
+  	line-height: 1.5;
+}
+
+@media only screen and (min-width: 500px){
+	.project-url {
+  		font-size: 1em;
+	}
+}
+
+/*project layout change for viewports larger than 616px*/
+@media only screen and (min-width: 616px) and (max-width: 949px){
+	.project {
+		position: relative;
+	}
+
+	.project-url{
+		width: 50%;
+
+		position: absolute;
+		right: 0;
+		top: 4.5em;
+		text-align: left;
+		padding: 0em 1em 0.5em;
+	}
+}
+
+/*making links pretty*/
+.project-url a {
+	color: #666;
+    text-decoration: none;
+}
+
+.project-url a:hover, .project-url a:active {
+	color: #333;
+}
